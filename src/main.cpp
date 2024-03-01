@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include "Headers/Screen.h"
+
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML");
 
     while (window.isOpen())
     {
@@ -15,8 +15,7 @@ int main()
                 window.close();
         }
 
-        window.clear();
-        window.draw(shape);
+        window.clear(sf::Color{BG_COLOR});
         window.display();
     }
 

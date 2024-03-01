@@ -2,11 +2,11 @@
 INCLUDE_SFML = SFML/include
 LIB_SFML = SFML/lib
 
-HEADERS = src/Headers
-
-
 # Source directory
 SRC_DIR = src
+
+
+HEADERS = $(SRC_DIR)/Headers
 
 
 # Find all cpp files in the source directory
@@ -24,7 +24,7 @@ compile: $(OBJ_FILES)
 
 
 %.o: $(SRC_DIR)/%.cpp
-	g++ -I$(INCLUDE_SFML) -I$(HEADERS) -c $< -o $@ -DSFML_STATIC
+	g++ -I$(HEADERS) -I$(INCLUDE_SFML) -c $< -o $@ -DSFML_STATIC
 
 
 link: $(OBJ_FILES)
