@@ -10,7 +10,7 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML");
 
-    long my_size {50};
+    long my_size {800};
 
     Array my_array        {my_size};
     my_array.inflate();
