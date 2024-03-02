@@ -5,6 +5,7 @@ LIB_SFML = SFML/lib
 # Source directory
 SRC_DIR = src
 
+# Headers directory
 HEADERS = $(SRC_DIR)/Headers
 
 
