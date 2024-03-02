@@ -3,11 +3,26 @@
 
 #include "Headers/Screen.h"
 #include "Headers/Array.h"
+#include "Headers/Visualizer.h"
 
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML");
+
+    long my_size {50};
+
+    Array my_array        {my_size};
+    my_array.inflate();
+    my_array.shuffle_values();
+
+
+    auto my_vals = my_array.get_values();
+
+    Visualizer visualizer {my_vals};
+    visualizer.create_value_bars();
+    auto my_bars = visualizer.get_bars();
+
 
     while (window.isOpen())
     {
@@ -19,6 +34,13 @@ int main()
         }
 
         window.clear(sf::Color{BG_COLOR});
+
+
+        for (long i = 0; i < my_size; ++i) {
+            window.draw(my_bars[i]);
+        }
+
+
         window.display();
     }
 

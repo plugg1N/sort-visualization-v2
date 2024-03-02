@@ -33,4 +33,3 @@ link: $(OBJ_FILES)
 
 clean:
 	rm -rf *.o
-	clear

@@ -4,12 +4,14 @@
 #include <vector>
 
 
+
 class Array
 {
+    typedef std::vector<double> ValueArray;
 
     private:
         long _num_elements {};          // number of elements to visualize
-        std::vector<double> _values {}; // values themselves
+        ValueArray _values {}; // values themselves
 
 
     public:
@@ -18,8 +20,7 @@ class Array
         void inflate();                 // fill the elements in
         void shuffle_values();          // shuffle the _values
 
-        std::vector<double> get_values() { return _values; }
-
+        ValueArray get_values() { return _values; }
 };
 
 
