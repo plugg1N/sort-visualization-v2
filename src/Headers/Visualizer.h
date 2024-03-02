@@ -25,6 +25,7 @@ class Visualizer {
         Visualizer(ValueArray& elements);                                   // initialize with starting vector
         void create_value_bars();                                           // create bars using `sf::RectangleShape`
         std::vector<sf::RectangleShape> get_bars() { return _bars; }        // bars getter
+        void set_values(ValueArray& values) { _values =  values; }
 
 };
 

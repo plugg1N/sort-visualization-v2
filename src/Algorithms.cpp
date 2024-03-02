@@ -1,4 +1,8 @@
 #include "Headers/Algorithms.h"
+#include "Headers/Helper.h"
+
+#include <iostream>
+#include <SFML/Graphics.hpp>
 
 
 /*
@@ -15,7 +19,7 @@ END
 
 
 // Bubble sort
-void SortingAlgorithms::bubble_sort(ValueArray& array) {
+void SortingAlgorithms::bubble_sort(ValueArray& array, Helper& helper) {
     long i, j, t;
     size_t num_elements = array.size();
 
@@ -26,6 +30,9 @@ void SortingAlgorithms::bubble_sort(ValueArray& array) {
                 array[j] = array[j+1];
                 array[j+1] = t;
             }
+
+            helper.set_state(array);
+            
         } 
     }
 }

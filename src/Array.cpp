@@ -1,4 +1,5 @@
 #include "Headers/Array.h"
+#include "Headers/Screen.h"
 
 #include <random>
 #include <SFML/Graphics.hpp>
@@ -19,7 +20,7 @@ Array::Array(long num_elements)
 
 // Fill the array with normalized values 
 void Array::inflate() {
-    double bar_value_diff = 500.0/static_cast<double>(_num_elements);   // difference between each neighbouring value
+    double bar_value_diff = (SCR_HEIGHT/2 + SCR_HEIGHT*0.1) / static_cast<double>(_num_elements);   // difference between each neighbouring value
 
     double i = 1.0;
 
