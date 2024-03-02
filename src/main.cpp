@@ -1,5 +1,8 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
 #include "Headers/Screen.h"
+#include "Headers/Array.h"
 
 
 int main()

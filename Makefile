@@ -5,7 +5,6 @@ LIB_SFML = SFML/lib
 # Source directory
 SRC_DIR = src
 
-
 HEADERS = $(SRC_DIR)/Headers
 
 
@@ -27,8 +26,11 @@ compile: $(OBJ_FILES)
 	g++ -I$(HEADERS) -I$(INCLUDE_SFML) -c $< -o $@ -DSFML_STATIC
 
 
+
 link: $(OBJ_FILES)
 	g++ $^ -o main -L$(LIB_SFML) -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lwinmm -lgdi32
 
+
 clean:
 	rm -rf *.o
+	clear
