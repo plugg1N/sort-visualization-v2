@@ -2,10 +2,7 @@
 #define SORTING_H
 
 
-#include "Headers/Converter.h"
-#include "Headers/Screen.h"
 #include <SFML/Graphics.hpp>
-#include <vector>
 
 
 class Sorting {
@@ -17,7 +14,7 @@ class Sorting {
 
 
     public:
-        Sorting(sf::RenderWindow& window, Converter& conv);
+        Sorting(sf::RenderWindow& window, Converter conv);
 
         void draw_bars(std::vector<sf::RectangleShape>& bars);
 
