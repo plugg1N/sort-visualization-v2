@@ -57,6 +57,7 @@ void Sorting::insertion_sort(std::vector<double>& array) {
 
             bars = _conv.convert_to_bars(array);
             draw_bars(bars);
+            sf::sleep(sf::milliseconds(5));
             bars.clear();
         }
 
