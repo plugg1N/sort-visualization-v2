@@ -46,10 +46,13 @@ int main()
         }
 
 
+        // If not sorted - sort
         if (!sorting.if_sorted()) {
             sorting.cocktail_sort(initial_array);
         }
 
+
+        // if sorted but there were no animation - animate
         if (!sorting.if_anim()) {
             sorting.check_sort_animation();
         }

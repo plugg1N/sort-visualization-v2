@@ -2,6 +2,12 @@
 #define CONVERTER_H
 
 
+/*
+
+@ Function to create bars (sf::Rectangles) from values provided
+
+*/
+
 #include <SFML/Graphics.hpp>
 #include <vector>
 

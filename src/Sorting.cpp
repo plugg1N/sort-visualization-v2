@@ -5,18 +5,27 @@
 #include "Headers/Screen.h"
 
 
+/*
+
+@ All sorting algorithms will be implemented here
+
+*/
+
+
+// Initialize Sorting obj. Provide it with window and Converter 
 Sorting::Sorting(sf::RenderWindow& window, Converter conv)
     : _window{window}, _conv{conv} {
 }
 
 
+// Draw bars to the screen
 void Sorting::draw_bars(std::vector<sf::RectangleShape>& bars) {
     size_t size = bars.size();
 
     _window.clear(sf::Color{BG_COLOR});
 
-    bars[_slow_pointer].setFillColor(sf::Color::Green);
-    bars[_fast_pointer].setFillColor(sf::Color::Red);
+    bars[_slow_pointer].setFillColor(sf::Color::Green);     // show where slow pointer is
+    bars[_fast_pointer].setFillColor(sf::Color::Red);       // show where fast pointer is
 
     for (int i=0; i < size; ++i) {
         _window.draw(bars[i]);
@@ -27,7 +36,10 @@ void Sorting::draw_bars(std::vector<sf::RectangleShape>& bars) {
 
 
 
+// --- SORTING ALGORITHMS --- //
 
+
+// Insertion sort
 void Sorting::insertion_sort(std::vector<double>& array) {
     int i, j;
     std::vector<sf::RectangleShape> bars {};
@@ -61,8 +73,7 @@ void Sorting::insertion_sort(std::vector<double>& array) {
 
 
 
-
-
+// Cocktail sort
 void Sorting::cocktail_sort(std::vector<double>& array) {
     bool swapped = true;
     int start = 0;
@@ -111,9 +122,13 @@ void Sorting::cocktail_sort(std::vector<double>& array) {
     _set_curr_state(array);
 }
 
+////////////////////
 
 
 
+// Animate the process of sort check
+
+// TODO: recreate this animation
 void Sorting::check_sort_animation() {
     std::vector<double> state = _curr_state;
     std::vector<sf::RectangleShape> bars = _conv.convert_to_bars(state);
