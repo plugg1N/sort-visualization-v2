@@ -5,7 +5,6 @@
 #include "Headers/Array.h"
 #include "Headers/Visualizer.h"
 #include "Headers/Algorithms.h"
-#include "Headers/Helper.h"
 
 
 /*
@@ -30,25 +29,17 @@ int main()
     // Get shuffled values of the array
     auto my_vals = my_array.get_values();
 
-    Helper helper {my_vals};
-
 
     // Create a `Visualizer` object with certain values
     Visualizer visualizer {my_vals};        // initiate it
     visualizer.create_value_bars();         // create bars according to info provided
 
 
-    SortingAlgorithms sort;
-
-
-
-    sort.bubble_sort(my_vals, helper);
 
 
     // ---- MAIN LOOP ---- ///
     while (window.isOpen())
     {
-        auto result = helper.get_state();
 
         // Handle closing
         sf::Event event;
@@ -62,16 +53,6 @@ int main()
         // Color the background with color given in "Header/Screen.h"
         window.clear(sf::Color{BG_COLOR});
 
-
-        
-        visualizer.set_values(result);
-        visualizer.create_value_bars();
-        auto bars = visualizer.get_bars();
-        
-
-        for (long i = 0; i < result.size(); ++i) {
-            window.draw(bars[i]);
-        }
 
     
         // Display

@@ -2,7 +2,6 @@
 #define ALGORITHMS_H
 
 #include <vector>
-#include "Helper.h"
 
 
 /*
@@ -17,7 +16,7 @@ class SortingAlgorithms {
 
     public:
         // Bubble sort
-        void bubble_sort(ValueArray& array, Helper& helper);
+        void bubble_sort(ValueArray& array);
 };
 
 
