@@ -25,14 +25,13 @@ int main()
 
     // Create an initial array
     Array my_array {my_size};
-    my_array.inflate();         // inflate it with values according to amount provided
-    my_array.shuffle_values();  // randomly shuffle the values
 
 
     // Get shuffled values of the array
     auto my_vals = my_array.get_values();
 
     Helper helper {my_vals};
+
 
     // Create a `Visualizer` object with certain values
     Visualizer visualizer {my_vals};        // initiate it
@@ -63,8 +62,6 @@ int main()
         // Color the background with color given in "Header/Screen.h"
         window.clear(sf::Color{BG_COLOR});
 
-
-        helper.print_iterations(result);
 
         
         visualizer.set_values(result);

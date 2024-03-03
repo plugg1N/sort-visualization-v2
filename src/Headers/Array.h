@@ -19,12 +19,12 @@ class Array
         long _num_elements {};          // number of elements to visualize
         ValueArray _values {};          // values themselves
 
+        void inflate();
+        void shuffle_values();
+
 
     public:
         Array(long _num_elements);      // initializer
-
-        void inflate();                 // fill the elements in
-        void shuffle_values();          // shuffle the _values
 
         ValueArray get_values() { return _values; }     // return values of array. getter
 };

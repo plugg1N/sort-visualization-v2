@@ -11,13 +11,6 @@
 
 */
 
-
-// Initialize the array
-Array::Array(long num_elements)
-    : _num_elements {num_elements} {
-}
-
-
 // Fill the array with normalized values 
 void Array::inflate() {
     double bar_value_diff = (SCR_HEIGHT/2 + SCR_HEIGHT*0.1) / static_cast<double>(_num_elements);   // difference between each neighbouring value
@@ -46,3 +39,16 @@ void Array::shuffle_values() {
         std::swap(_values[i], _values[j]);
     }
 }
+
+
+
+// Initialize the array
+Array::Array(long num_elements)
+    : _num_elements {num_elements} {
+
+    inflate();
+    shuffle_values();
+
+}
+
+
