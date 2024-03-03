@@ -19,6 +19,7 @@ class Sorting {
         void draw_bars(std::vector<sf::RectangleShape>& bars);
 
         void insertion_sort(std::vector<double>& array);
+        void cocktail_sort(std::vector<double>& array);
 
         void set_sorted() { _sorted = true; }
         bool if_sorted()  { return _sorted; }
