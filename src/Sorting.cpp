@@ -1,6 +1,20 @@
 #include "Headers/Sorting.h"
 
 
+Sorting::Sorting(sf::RenderWindow& window, Converter& conv)
+    : _window{window}, _conv{conv} {
+}
+
+
+void Sorting::draw_bars(std::vector<sf::RectangleShape>& bars) {
+    size_t size = bars.size();
+
+    for (int i=0; i < size; ++i) {
+        _window.draw(bars[i]);
+    }
+}
+
+
 void Sorting::insertion_sort(std::vector<double>& array) {
     int i, j;
 
@@ -14,11 +28,17 @@ void Sorting::insertion_sort(std::vector<double>& array) {
             array[j + 1] = array[j];
 
             j = j - 1;
-            _frames.push_back(array);
+
+            auto bars = _conv.convert_to_bars(array);
+
+            _window.clear(sf::Color{BG_COLOR});
+            draw_bars(bars);
+            _window.display();
+            
         }
 
         array[j + 1] = key;
     }
 
-    _frames.push_back(array);
+    set_sorted();
 }

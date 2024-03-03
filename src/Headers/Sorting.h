@@ -1,21 +1,30 @@
 #ifndef SORTING_H
 #define SORTING_H
 
+
+#include "Headers/Converter.h"
+#include "Headers/Screen.h"
+#include <SFML/Graphics.hpp>
 #include <vector>
 
 
 class Sorting {
     private:
-        std::vector<std::vector<double>> _frames {};
         bool _sorted {false};
+
+        sf::RenderWindow& _window;
+        Converter _conv{};
 
 
     public:
+        Sorting(sf::RenderWindow& window, Converter& conv);
+
+        void draw_bars(std::vector<sf::RectangleShape>& bars);
+
         void insertion_sort(std::vector<double>& array);
 
         void set_sorted() { _sorted = true; }
         bool if_sorted()  { return _sorted; }
-        std::vector<std::vector<double>> get_frames() { return _frames; }
 };
 
 
