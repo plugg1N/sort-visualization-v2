@@ -24,7 +24,7 @@ compile: $(OBJ_FILES)
 
 
 %.o: $(SRC_DIR)/%.cpp
-	g++ -I$(HEADERS) -I$(INCLUDE_SFML) -c $< -o $@ -DSFML_STATIC
+	g++ -I$(HEADERS) -I$(INCLUDE_SFML) -c $< -o $@ -DSFML_STATIC -g
 
 
 

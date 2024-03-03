@@ -17,7 +17,8 @@ int main()
 {
     // Create a window and set amount of elements
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML");
-    long my_size {20};
+
+    long my_size {100};
 
     // Init objects
     Array my_array {my_size};
@@ -25,18 +26,22 @@ int main()
     Bars visualizer;
 
 
-    auto initial_array = my_array.get_values();   // initial values
-    algo.bubble_sort(initial_array);              // sort the initial array
+    // Initial Values
+    auto initial_array = my_array.get_values();
+    auto initial_bars = visualizer.get_bars(initial_array);
 
+
+    algo.insertion_sort(initial_array);              // sort the initial array
     auto captured_frames = algo.get_frames();     // get each frame of sorting algorithm
+    size_t frames_size = captured_frames.size();
 
-    // for (int i = 0; i < captured_frames.size(); ++i) {
-    //     for (int j = 0; j < my_size; ++j) {
-    //         std::cout << captured_frames[i][j] << " ";
-    //     }
+    std::vector<std::vector<sf::RectangleShape>> captured_bars {};
 
-    //     std::cout << "\n";
-    // }
+    for (int i = 0; i < frames_size; i++) {
+        captured_bars.push_back(visualizer.get_bars(captured_frames[i]));
+    }
+
+
 
     
 
@@ -45,7 +50,6 @@ int main()
     // ---- MAIN LOOP ---- ///
     while (window.isOpen())
     {
-
         // Handle closing
         sf::Event event;
         while (window.pollEvent(event))
@@ -53,14 +57,38 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        
+
+
 
         // Color the background with color given in "Header/Screen.h"
-        window.clear(sf::Color{BG_COLOR});
+        
 
-    
-        // Display
-        window.display();
+        if (!algo.if_sorted()) {
+            for (int i = 0; i < captured_bars.size(); ++i) {
+                window.clear(sf::Color{BG_COLOR});
+
+
+
+                for (int j = 0; j < captured_bars[i].size(); ++j) {
+                    window.draw(captured_bars[i][j]);
+                }
+
+                sf::sleep(sf::milliseconds(100));
+                window.display();
+            }
+        }
+
+        algo.set_sorted();
+
+        
+
+
+        // for (int i = 0; i < initial_bars.size(); ++i) {
+        //     window.draw(initial_bars[i]);
+        // }
+
+
+        
     }
 
     return 0;

@@ -7,12 +7,14 @@
 class Sorting {
     private:
         std::vector<std::vector<double>> _frames {};
+        bool _sorted {false};
 
 
     public:
-        void bubble_sort(std::vector<double> array);
+        void insertion_sort(std::vector<double>& array);
 
-        void capture_frame(std::vector<double> array) { _frames.push_back(array); }
+        void set_sorted() { _sorted = true; }
+        bool if_sorted()  { return _sorted; }
         std::vector<std::vector<double>> get_frames() { return _frames; }
 };
 
