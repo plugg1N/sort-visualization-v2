@@ -16,16 +16,11 @@ int main()
     // Create a window
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML");
 
-    // I will plot 70 elements for now
-    long my_size {50};
+    // Init array with num of elements
+    long my_size {20};
 
-
-    // Create an initial array
     Array my_array {my_size};
-
-
-    // Get shuffled values of the array
-    auto my_vals = my_array.get_values();
+    auto my_vals = my_array.get_values();   // initial values
 
 
 

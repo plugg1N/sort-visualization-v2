@@ -12,12 +12,11 @@
 
 class Array
 {
-    // Alias
-    typedef std::vector<double> ValueArray;
-
     private:
         long _num_elements {};          // number of elements to visualize
-        ValueArray _values {};          // values themselves
+        std::vector<double> _values {};          // values themselves
+
+
 
         void inflate();
         void shuffle_values();
@@ -26,7 +25,7 @@ class Array
     public:
         Array(long _num_elements);      // initializer
 
-        ValueArray get_values() { return _values; }     // return values of array. getter
+        std::vector<double> get_values() { return _values; }     // return values of array. getter
 };
 
 

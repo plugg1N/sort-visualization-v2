@@ -11,6 +11,8 @@
 
 */
 
+
+
 // Fill the array with normalized values 
 void Array::inflate() {
     double bar_value_diff = (SCR_HEIGHT/2 + SCR_HEIGHT*0.1) / static_cast<double>(_num_elements);   // difference between each neighbouring value
@@ -23,6 +25,7 @@ void Array::inflate() {
         i += 1.0;
     }
 }
+
 
 
 // Shuffle the array using Fischer-Yates algorithm
@@ -39,6 +42,8 @@ void Array::shuffle_values() {
         std::swap(_values[i], _values[j]);
     }
 }
+
+
 
 
 

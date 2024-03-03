@@ -32,5 +32,9 @@ link: $(OBJ_FILES)
 	g++ $^ -o main -L$(LIB_SFML) -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lwinmm -lgdi32
 
 
+debug:
+	gdb ./main
+
+
 clean:
 	rm -rf *.o
