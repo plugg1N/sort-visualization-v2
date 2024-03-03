@@ -39,8 +39,8 @@ class Sorting {
         void draw_bars(std::vector<sf::RectangleShape>& bars);
         void check_sort_animation();    // check if sorted (animation of checking)
 
-        void set_slow_pointer(int& index) { _slow_pointer = index; }    // set index of a slow pointer
-        void set_fast_pointer(int& index) { _fast_pointer = index; }    // set index of a fast pointer
+        void set_slow_pointer(int index) { _slow_pointer = index; }    // set index of a slow pointer
+        void set_fast_pointer(int index) { _fast_pointer = index; }    // set index of a fast pointer
 
 
         // --- SORTING ALGORITHMS --- // 

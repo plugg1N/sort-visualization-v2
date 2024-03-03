@@ -84,8 +84,8 @@ void Sorting::cocktail_sort(std::vector<double>& array) {
     while (swapped) {
         swapped = false;
         for (int i = start; i < end; ++i) {
-            set_slow_pointer(i);
             if (array[i] > array[i + 1]) {
+                set_slow_pointer(i);
                 std::swap(array[i], array[i + 1]);
                 swapped = true;
             }
@@ -99,8 +99,8 @@ void Sorting::cocktail_sort(std::vector<double>& array) {
         --end;
 
         for (int i = end - 1; i >= start; --i) {
-            set_fast_pointer(i);
             if (array[i] > array[i + 1]) {
+                set_fast_pointer(i+1);
                 std::swap(array[i], array[i + 1]);
                 swapped = true;
             }
