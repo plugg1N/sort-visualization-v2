@@ -19,7 +19,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML",
                             sf::Style::Close);
 
-    long my_size {800};
+    long my_size {300};
 
     // Init objects
     Array my_array {my_size};
@@ -48,6 +48,10 @@ int main()
 
         if (!sorting.if_sorted()) {
             sorting.cocktail_sort(initial_array);
+        }
+
+        if (!sorting.if_anim()) {
+            sorting.check_sort_animation();
         }
     }
 

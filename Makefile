@@ -17,7 +17,7 @@ SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp, %.o, $(SRC_FILES))
 
 
-all: compile link clean
+all: compile link
 
 
 compile: $(OBJ_FILES)
