@@ -3,8 +3,6 @@
 
 #include "Headers/Screen.h"
 #include "Headers/Array.h"
-#include "Headers/Visualizer.h"
-#include "Headers/Algorithms.h"
 
 
 /*
@@ -30,28 +28,6 @@ int main()
     auto my_vals = my_array.get_values();
 
 
-    // Create a `Visualizer` object with certain values
-    Visualizer visualizer {my_vals};        // initiate it
-    visualizer.create_value_bars();         // create bars according to info provided
-
-    SortingAlgorithms bubble_sort;
-    bubble_sort.bubble_sort(my_vals);
-
-    auto sorting_states = bubble_sort.get_states();
-    size_t states_size = sorting_states.size();
-
-
-    std::vector<std::vector<sf::RectangleShape>> sorting_bars;
-
-
-
-    for (long i = 0; i < states_size; ++i) {
-        visualizer.set_values(sorting_states[i]);
-        visualizer.create_value_bars();
-        sorting_bars.push_back(visualizer.get_bars());
-    }
-
-
 
 
     // ---- MAIN LOOP ---- ///
@@ -69,13 +45,6 @@ int main()
 
         // Color the background with color given in "Header/Screen.h"
         window.clear(sf::Color{BG_COLOR});
-
-
-        for (long i = 0; i < states_size; ++i) {
-            for (long j = 0; j < my_size; ++j) {
-                window.draw(sorting_bars[i][j]);
-            }
-        }
 
     
         // Display
