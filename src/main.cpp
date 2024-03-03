@@ -18,7 +18,7 @@ int main()
     // Create a window and set amount of elements
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML");
 
-    long my_size {100};
+    long my_size {300};
 
     // Init objects
     Array my_array {my_size};
@@ -73,7 +73,7 @@ int main()
                     window.draw(captured_bars[i][j]);
                 }
 
-                sf::sleep(sf::milliseconds(100));
+                sf::sleep(sf::milliseconds(1));
                 window.display();
             }
         }

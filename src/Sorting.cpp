@@ -14,9 +14,11 @@ void Sorting::insertion_sort(std::vector<double>& array) {
             array[j + 1] = array[j];
 
             j = j - 1;
+            _frames.push_back(array);
         }
 
         array[j + 1] = key;
-        _frames.push_back(array);
     }
+
+    _frames.push_back(array);
 }
