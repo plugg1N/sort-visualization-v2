@@ -17,7 +17,7 @@ int main()
 {
     // Create a window and set amount of elements
     sf::RenderWindow window(sf::VideoMode(SCR_WIDTH, SCR_HEIGHT), "Sort Visualizer /w SFML",
-                            sf::Style::Close);
+                            sf::Style::None);
 
     long my_size {400};
 
