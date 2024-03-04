@@ -8,7 +8,7 @@ to be a good project!
 For now these sorting algorithms are implemented:</p>
 
 <ul>
-    <li>Bubble Sort</li>
+    <li>Insertion Sort</li>
     <li>Cocktail Sort (Shaker)</li>
 </ul>
 
