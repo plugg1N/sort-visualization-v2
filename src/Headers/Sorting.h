@@ -29,18 +29,17 @@ class Sorting {
 
         void _set_curr_state(std::vector<double>& state) { _curr_state = state; }   // setter for state
 
+        // Draw bars to the screen
+        void draw_bars(std::vector<sf::RectangleShape>& bars);
+
+        void set_slow_pointer(int index) { _slow_pointer = index; }    // set index of a slow pointer
+        void set_fast_pointer(int index) { _fast_pointer = index; }    // set index of a fast pointer
+
 
 
     public:
         // Initialize
         Sorting(sf::RenderWindow& window, Converter conv);
-
-        // Draw bars to the screen
-        void draw_bars(std::vector<sf::RectangleShape>& bars);
-        void check_sort_animation();    // check if sorted (animation of checking)
-
-        void set_slow_pointer(int index) { _slow_pointer = index; }    // set index of a slow pointer
-        void set_fast_pointer(int index) { _fast_pointer = index; }    // set index of a fast pointer
 
 
         // --- SORTING ALGORITHMS --- // 
@@ -48,7 +47,9 @@ class Sorting {
         void cocktail_sort(std::vector<double>& array);
 
 
-        // Setters and getters
+
+        // Checkers, setters and getters
+        void check_sort_animation();    // check if sorted (animation of checking)
         void set_sorted() { _sorted = true; }   // set if sorting process has ended successfully
         bool if_sorted()  { return _sorted; }   // check if sorted
         bool if_anim()    { return _anim; }     // check if animation has been done

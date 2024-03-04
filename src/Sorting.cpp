@@ -55,6 +55,7 @@ void Sorting::insertion_sort(std::vector<double>& array) {
 
             j = j - 1;
 
+
             bars = _conv.convert_to_bars(array);
             draw_bars(bars);
             sf::sleep(sf::milliseconds(5));
@@ -134,14 +135,22 @@ void Sorting::check_sort_animation() {
     std::vector<double> state = _curr_state;
     std::vector<sf::RectangleShape> bars = _conv.convert_to_bars(state);
 
-    _window.clear(sf::Color{BG_COLOR});
-    for (int i=0; i < bars.size(); ++i) {
-        bars[i].setFillColor(sf::Color::Green);
-        _window.draw(bars[i]);   
 
+    for (int i = 0; i < bars.size(); ++i) {
+        _window.clear(sf::Color{BG_COLOR});
+        bars[i].setFillColor(sf::Color::Red);
+
+
+        for (const auto& bar : bars) _window.draw(bar);
+
+
+        bars[i].setFillColor(sf::Color::Green);
+
+        _window.display();
+
+        sf::sleep(sf::milliseconds(5));
     }
 
-    _window.display();
     
 
     _anim = true;
